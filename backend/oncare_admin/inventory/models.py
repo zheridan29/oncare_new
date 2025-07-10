@@ -31,5 +31,8 @@ class StockEntry(ArchiveMixin):
     modified_date = models.DateTimeField(blank=True, null=True)
     updated_by = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, null=True, blank=True)
 
+    objects = ActiveManager()      # Default manager: shows only active records
+    all_objects = models.Manager() # Backup manager: shows everything
+
     def __str__(self):
         return f"Stock entry for {self.product} on {self.stock_date}"
