@@ -1,0 +1,8 @@
+Backend Setup
+
+# Create virtual environment
+python -m venv env
+source env/bin/activate  # or env\Scripts\activate on Windows
+
+# Install Django and Channels for WebSocket support
+pip install django channels djangorestframework psycopg2
